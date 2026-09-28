@@ -1,0 +1,753 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --vermelho: #b51225;
+    --vermelho-escuro: #720b18;
+    --creme: #fff4dc;
+    --dourado: #e3ad43;
+    --preto: #171313;
+    --branco: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--creme);
+    color: var(--preto);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   TELA INICIAL
+========================= */
+
+.tela-inicial {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: white;
+
+    background:
+        radial-gradient(circle at top, #c8273b, transparent 40%),
+        linear-gradient(145deg, #650914, #a40f22 50%, #47060d);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.tela-inicial::before {
+    content: "✦  •  ✧  •  ✦  •  ✧  •  ✦";
+    position: absolute;
+
+    top: 20px;
+    left: 0;
+
+    width: 100%;
+
+    font-size: 25px;
+    opacity: 0.4;
+}
+
+.instrumentos {
+    font-size: 38px;
+    margin-bottom: 20px;
+
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+.pequeno {
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.tela-inicial h1 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(60px, 15vw, 110px);
+
+    line-height: 0.85;
+
+    margin-top: 15px;
+}
+
+.numero {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 120px;
+
+    line-height: 0.8;
+
+    color: var(--dourado);
+
+    text-shadow: 5px 5px 0 #570711;
+}
+
+.nome-capa {
+    font-size: 30px;
+    letter-spacing: 12px;
+    font-weight: 800;
+
+    margin: 25px 0;
+}
+
+#abrirConvite {
+    border: none;
+
+    padding: 18px 35px;
+
+    border-radius: 50px;
+
+    background: var(--dourado);
+    color: #3c1800;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+
+    transition: 0.3s;
+}
+
+#abrirConvite:hover {
+    transform: scale(1.06);
+}
+
+.toque {
+    font-size: 11px;
+    margin-top: 15px;
+    opacity: 0.7;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.conteudo {
+    display: none;
+}
+
+.conteudo.ativo {
+    display: block;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 25px;
+
+    color: white;
+
+    background:
+        radial-gradient(circle at center, #c52339, transparent 45%),
+        linear-gradient(160deg, #5e0712, #a90f25);
+
+    position: relative;
+}
+
+.confetes {
+    position: absolute;
+
+    top: 30px;
+
+    font-size: 25px;
+
+    opacity: 0.5;
+}
+
+.pre-titulo {
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(70px, 18vw, 150px);
+
+    line-height: 0.8;
+
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--dourado);
+
+    font-size: 0.55em;
+}
+
+.pandeiro {
+    font-size: 70px;
+
+    animation: girar 4s linear infinite;
+}
+
+.frase {
+    margin-top: 20px;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+.contador-section {
+    background: var(--preto);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+.titulo-secao {
+    color: var(--dourado);
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.contador {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.tempo {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 65px;
+}
+
+.tempo span {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 45px;
+
+    color: white;
+}
+
+.tempo small {
+    font-size: 8px;
+
+    color: #aaa;
+}
+
+.separador {
+    color: var(--dourado);
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.informacoes {
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 50px 25px;
+}
+
+.card-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.icone {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: var(--vermelho);
+
+    border-radius: 50%;
+
+    font-size: 25px;
+}
+
+.card-info h3 {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: var(--vermelho);
+}
+
+.card-info p {
+    margin-top: 5px;
+
+    font-weight: 700;
+
+    font-size: 16px;
+}
+
+.card-info small {
+    display: block;
+
+    margin-top: 5px;
+
+    line-height: 1.5;
+
+    color: #666;
+}
+
+
+/* =========================
+   AVISO
+========================= */
+
+.aviso {
+    max-width: 700px;
+
+    margin: 20px auto 60px;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    background: #fff;
+
+    border: 3px solid var(--vermelho);
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.aviso-icone {
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+.aviso h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 45px;
+
+    color: var(--vermelho);
+}
+
+.aviso p {
+    line-height: 1.7;
+
+    margin: 15px auto;
+
+    max-width: 500px;
+}
+
+.destaque {
+    display: inline-block;
+
+    background: var(--vermelho);
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   GALERIA
+========================= */
+
+.galeria-section {
+    padding: 60px 20px;
+
+    text-align: center;
+
+    background: #1d1717;
+
+    color: white;
+}
+
+.galeria-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 50px;
+
+    margin-bottom: 30px;
+}
+
+.galeria {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.foto {
+    height: 260px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    border: 3px solid rgba(255,255,255,0.1);
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.foto:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   SAMBA
+========================= */
+
+.samba {
+    text-align: center;
+
+    padding: 80px 25px;
+
+    color: white;
+
+    background:
+        linear-gradient(135deg, #970e20, #580711);
+}
+
+.decoracao {
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+.samba h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 65px;
+}
+
+.samba p {
+    max-width: 500px;
+
+    margin: 15px auto;
+
+    line-height: 1.7;
+}
+
+.instrumentos-grandes {
+    font-size: 55px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   LOCALIZAÇÃO
+========================= */
+
+.localizacao {
+    text-align: center;
+
+    padding: 70px 25px;
+
+    background: var(--creme);
+}
+
+.localizacao h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 55px;
+
+    color: var(--vermelho);
+
+    margin-bottom: 15px;
+}
+
+.localizacao p {
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.botao-mapa,
+.botao-whatsapp {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+.botao-mapa {
+    background: var(--preto);
+
+    color: white;
+}
+
+.botao-mapa:hover,
+.botao-whatsapp:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   CONFIRMAÇÃO
+========================= */
+
+.confirmacao {
+    padding: 80px 25px;
+
+    text-align: center;
+
+    background: var(--dourado);
+
+    color: #351500;
+}
+
+.copo {
+    font-size: 60px;
+}
+
+.confirmacao h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 70px;
+}
+
+.confirmacao p {
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.botao-whatsapp {
+    background: #1d7c3c;
+
+    color: white;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background: #160d0d;
+}
+
+.rodape-instrumentos {
+    font-size: 30px;
+
+    margin-bottom: 20px;
+}
+
+footer h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 50px;
+
+    color: var(--dourado);
+}
+
+footer p {
+    font-size: 11px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   BOTÃO MÚSICA
+========================= */
+
+.botao-musica {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: 2px solid white;
+
+    background: var(--vermelho);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 100;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes flutuar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+@keyframes girar {
+
+    from {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    to {
+        transform: rotate(-5deg);
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .nome-capa {
+        font-size: 23px;
+        letter-spacing: 7px;
+    }
+
+    .contador {
+        gap: 5px;
+    }
+
+    .tempo {
+        min-width: 55px;
+    }
+
+    .tempo span {
+        font-size: 35px;
+    }
+
+    .separador {
+        font-size: 20px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .foto {
+        height: 190px;
+    }
+
+    .samba h2 {
+        font-size: 50px;
+    }
+
+}
